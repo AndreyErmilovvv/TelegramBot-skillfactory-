@@ -39,7 +39,7 @@ def convert_result(message: telebot.types.Message):
     except Exception as e:
         bot.reply_to(message, f'Не удалось обработать команду.\n {e}')
     else:
-        text = f'{amount} {values[base]} >> {values[quote]} = {result}'
+        text = f'{amount} {values[base]} >> {result}{values[quote]}'
         bot.send_message(message.chat.id, text)
         bot.send_message(message.chat.id, "/menu")
 
